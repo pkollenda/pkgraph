@@ -1,0 +1,15 @@
+Package: pkgraph
+Type: Package
+Title: Fancy Graphs with GGPlot
+Version: 0.1.0
+Authors@R: person("Philipp", "Kollenda", email = "p.kollenda@vu.nl", role = c("aut", "cre"))
+Description: This package uses best practices from data visualizations to create appealing graphs with 
+    a coherent theme. Inspiration comes from VU Data Visualization Course, BBC Cookbook and Guardian Visualisations,
+    the book Data Visualizations by Kieran Healy and the website chrisbail.net.
+Depends:
+    R (>= 3.4.2)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: tidyverse, cowplot, scales
