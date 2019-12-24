@@ -18,7 +18,7 @@ A dataset containing information on aid projects related to the sustainable deve
   \item{year}{Year of Project}
   \item{Donor}{Donor Country or Organisation}
   \item{Recipient}{Recipient Country or Organisation}
-  \item{Total Amount in USD of Project}
+  \item{Amount}{Total Amount in USD of Project}
  }
  @source Somewhere from the internet.
 }

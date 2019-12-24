@@ -30,7 +30,7 @@ bars <- function(
   data,
   count, group, highlight_variable = NA,
   ordered = "alphabetically", first_group = NA, flipped = TRUE, labelled = FALSE, show_percent = NA,
-  label_nudge_y = -(max(data %>% select({{count}})) / 100 * 2), label_nudge_x = 0, label_size = 3, label_color = "white", label_hjust = "right",
+  label_nudge_y = -0.02*max(select(data, {{count}})), label_nudge_x = 0, label_size = 3, label_color = "white", label_hjust = "right",
   axis.title.x = element_blank(), axis.title.y = element_blank(),
   title = element_blank(),
   legend.position = "none",
@@ -54,7 +54,7 @@ bars <- function(
   p <- p + geom_col()
 
   # . Add geom_text to label the bars with the number of observations, if desired.
-  if(labelled){ p <- p + geom_text(aes(label = n, y = n), nudge_y = label_nudge_y, nudge_x = label_nudge_x,
+  if(labelled){ p <- p + geom_text(aes(label = {{count}}, y = {{count}}), nudge_y = label_nudge_y, nudge_x = label_nudge_x,
                                    size = label_size, hjust = label_hjust, color = label_color)}
 
   # 3) Add highlighted variable if desired.
@@ -72,6 +72,7 @@ bars <- function(
 
   # 5) Adjust (if desired) the scales.
   p <- p + scale_x_discrete(labels = scales::wrap_format(width = 16))
+  p <- p + scale_y_continuous(labels = scales::comma)
 
   # 6) Add all the labels.
   p <- p + labs(
@@ -80,7 +81,9 @@ bars <- function(
 
   # 7) Set and adjust the main theme.
   p <- p + cowplot::theme_minimal_vgrid(font_size = fontsize)
-  p <- p + theme(legend.position = legend.position)
+  p <- p + theme(legend.position = legend.position, axis.title = element_text(face = "italic"),
+                 plot.title = element_text(face = "bold", size = fontsize * 1.15))
+  if(labelled && flipped){p <- p + theme(panel.grid = element_blank(), axis.text.x = element_blank())}
 
   return(p)
 }

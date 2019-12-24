@@ -8,6 +8,14 @@
 \description{
 Easily generate custom graphs from data frames
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/pkollenda/pkgraph}
+  \item Report bugs at \url{https://github.com/pkollenda/pkgraph/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Philipp Kollenda \email{p.kollenda@vu.nl}
 

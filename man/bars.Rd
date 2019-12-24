@@ -6,12 +6,11 @@
 \usage{
 bars(data, count, group, highlight_variable = NA,
   ordered = "alphabetically", first_group = NA, flipped = TRUE,
-  labelled = FALSE, show_percent = NA, label_nudge_y = -(max(data
-  \%>\% select({     {         count     } }))/100 * 2),
-  label_nudge_x = 0, label_size = 3, label_color = "white",
-  label_hjust = "right", axis.title.x = element_blank(),
-  axis.title.y = element_blank(), title = element_blank(),
-  legend.position = "none", fontsize = 16)
+  labelled = FALSE, show_percent = NA, label_nudge_y = -0.02 *
+  max(select(data, {     {         count     } })), label_nudge_x = 0,
+  label_size = 3, label_color = "white", label_hjust = "right",
+  axis.title.x = element_blank(), axis.title.y = element_blank(),
+  title = element_blank(), legend.position = "none", fontsize = 16)
 }
 \arguments{
 \item{data}{A data frame.}
