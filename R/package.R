@@ -7,4 +7,4 @@
 "_PACKAGE"
 
 # Update this function call
-utils::globalVariables(c("sdg", "emperors"))
+utils::globalVariables(c("sdg", "emperors", "prices"))
