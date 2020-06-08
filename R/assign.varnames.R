@@ -12,7 +12,6 @@
 #' @return A data frame with assigned labels
 #' @export assign.varnames
 #'
-
 assign.varnames <- function(data) {
   if(is.null(attributes(data)$var.labels)) {
     return(message("Data has no variable label attribute. Was it really imported with readstata13?"))
